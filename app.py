@@ -14,6 +14,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle
+import os  # Adicionado para gerenciamento robusto de caminhos de arquivos
 
 # 1. Configuração da página do Streamlit
 st.set_page_config(
@@ -22,19 +23,36 @@ st.set_page_config(
     layout="centered"
 )
 
+# Descobre o diretório onde o arquivo app.py está localizado na nuvem
+DIRETORIO_ATUAL = os.path.dirname(os.path.abspath(__file__))
+
 # 2. Função para carregar os artefatos salvos
 @st.cache_resource
 def carregar_modelo():
-    with open('modelo_obesidade_xgb.pkl', 'rb') as f_modelo:
+    # Constrói o caminho absoluto de forma dinâmica e segura para qualquer SO (Linux/Windows)
+    caminho_modelo = os.path.join(DIRETORIO_ATUAL, 'modelo_obesidade_xgb.pkl')
+    caminho_encoder = os.path.join(DIRETORIO_ATUAL, 'label_encoder.pkl')
+    
+    with open(caminho_modelo, 'rb') as f_modelo:
         modelo = pickle.load(f_modelo)
-    with open('label_encoder.pkl', 'rb') as f_encoder:
+        
+    with open(caminho_encoder, 'rb') as f_encoder:
         encoder = pickle.load(f_encoder)
+        
     return modelo, encoder
 
+# Tentativa de carregamento dos modelos com tratamento de erro amigável na UI
 try:
     modelo_campeao, label_encoder = carregar_modelo()
-except FileNotFoundError:
-    st.error("Erro: Arquivos 'modelo_obesidade_xgb.pkl' ou 'label_encoder.pkl' não foram encontrados no diretório.")
+except FileNotFoundError as e:
+    st.error("⚠️ Erro Crítico: Arquivos de inteligência artificial não encontrados.")
+    st.markdown(
+        f"""
+        **Detalhes técnicos:** O Streamlit não conseguiu localizar os artefatos `.pkl` no repositório.
+        * Caminho esperado: `{DIRETORIO_ATUAL}`
+        * Verifique se os arquivos `modelo_obesidade_xgb.pkl` e `label_encoder.pkl` foram devidamente commitados na mesma pasta do seu `app.py`.
+        """
+    )
     st.stop()
 
 # 3. Interface Visual (Visão de Negócio / Médica)
