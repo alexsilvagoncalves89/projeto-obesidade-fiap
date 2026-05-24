@@ -14,7 +14,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle
-import os  # Adicionado para gerenciamento robusto de caminhos de arquivos
+import os
 
 # 1. Configuração da página do Streamlit
 st.set_page_config(
@@ -23,15 +23,15 @@ st.set_page_config(
     layout="centered"
 )
 
-# Descobre o diretório onde o arquivo app.py está localizado na nuvem
+# Descobre o diretório raiz onde o arquivo app.py está localizado na nuvem
 DIRETORIO_ATUAL = os.path.dirname(os.path.abspath(__file__))
 
-# 2. Função para carregar os artefatos salvos
+# 2. Função para carregar os artefatos salvos dentro da pasta 'modelos'
 @st.cache_resource
 def carregar_modelo():
-    # Constrói o caminho absoluto de forma dinâmica e segura para qualquer SO (Linux/Windows)
-    caminho_modelo = os.path.join(DIRETORIO_ATUAL, 'modelo_obesidade_xgb.pkl')
-    caminho_encoder = os.path.join(DIRETORIO_ATUAL, 'label_encoder.pkl')
+    # Incluído o argumento 'modelos' para apontar corretamente para a subpasta do GitHub
+    caminho_modelo = os.path.join(DIRETORIO_ATUAL, 'modelos', 'modelo_obesidade_xgb.pkl')
+    caminho_encoder = os.path.join(DIRETORIO_ATUAL, 'modelos', 'label_encoder.pkl')
     
     with open(caminho_modelo, 'rb') as f_modelo:
         modelo = pickle.load(f_modelo)
@@ -49,8 +49,8 @@ except FileNotFoundError as e:
     st.markdown(
         f"""
         **Detalhes técnicos:** O Streamlit não conseguiu localizar os artefatos `.pkl` no repositório.
-        * Caminho esperado: `{DIRETORIO_ATUAL}`
-        * Verifique se os arquivos `modelo_obesidade_xgb.pkl` e `label_encoder.pkl` foram devidamente commitados na mesma pasta do seu `app.py`.
+        * Caminho verificado: `{os.path.join(DIRETORIO_ATUAL, 'modelos')}`
+        * Verifique se os arquivos `modelo_obesidade_xgb.pkl` e `label_encoder.pkl` estão em letras minúsculas dentro da pasta **modelos**.
         """
     )
     st.stop()
