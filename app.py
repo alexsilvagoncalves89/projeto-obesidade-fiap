@@ -1,7 +1,20 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import joblib  # Mudamos de pickle para joblib
+import joblib
+import sys
+
+# ==============================================================================
+# INJEÇÃO DE COMPATIBILIDADE (Correção do Erro _RemainderColsList)
+# ==============================================================================
+# Este bloco recria o atributo antigo que o seu arquivo .joblib procura,
+# impedindo que o Scikit-Learn mais novo quebre o carregamento na nuvem.
+import sklearn.compose._column_transformer
+if not hasattr(sklearn.compose._column_transformer, '_RemainderColsList'):
+    class _RemainderColsList(list):
+        pass
+    sklearn.compose._column_transformer._RemainderColsList = _RemainderColsList
+# ==============================================================================
 
 # 1. Configuração da página
 st.set_page_config(page_title="Predição de Obesidade", page_icon="🩺", layout="centered")
