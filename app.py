@@ -10,7 +10,7 @@ Original file is located at
 # ==============================================================================
 # ARQUIVO: app.py (Deploy do Sistema Preditivo com Streamlit)
 # ==============================================================================
-import streamlit as tf
+import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle
