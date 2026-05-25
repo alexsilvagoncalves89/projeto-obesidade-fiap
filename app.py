@@ -34,7 +34,7 @@ except Exception as e:
 
 # 3. Interface Visual (Formulário Médico)
 st.title("🩺 Sistema de Diagnóstico de Obesidade")
-st.markdown("Plataforma de triagem utilizando inteligência artificial (XGBoost + Joblib).")
+st.markdown("Sistema de triagem utilizando Machine Learning (IA) - Modelo XGBoost.")
 st.divider()
 
 col1, col2 = st.columns(2)
@@ -50,7 +50,7 @@ with col1:
     refeicoes_principais = st.slider("Refeições principais por dia:", 1.0, 4.0, 3.0, step=1.0)
 
 with col2:
-    entre_refeicoes = st.selectbox("Consome entre as refeições?", ["Nunca", "Às vezes", "Frequentemente", "Sempre"])
+    entre_refeicoes = st.selectbox("Consome alimentos entre as refeições?", ["Nunca", "Às vezes", "Frequentemente", "Sempre"])
     fumante = st.selectbox("É fumante?", ["Sim", "Não"])
     consumo_agua = st.slider("Consumo de água (Litros):", 1.0, 3.0, 2.0, step=0.5)
     monitora_calorias = st.selectbox("Monitora calorias?", ["Sim", "Não"])
