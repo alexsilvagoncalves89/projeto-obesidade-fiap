@@ -1,0 +1,18 @@
+[theme]
+# Força o sistema a usar o modo claro sempre (evita o bug do texto branco)
+base="light"
+
+# Cor principal (Botões, sliders e destaques) - Azul Médico Vivo
+primaryColor="#1E88E5"
+
+# Cor de fundo da página principal - Azul/Branco muito suave
+backgroundColor="#F4F9FB"
+
+# Cor de fundo do Menu Lateral - Azul acinzentado claro
+secondaryBackgroundColor="#E8F1F5"
+
+# Cor dos textos - Azul Escuro/Ardósia (Garante leitura perfeita)
+textColor="#2C3E50"
+
+# Fonte limpa e profissional
+font="sans serif"
