@@ -13,28 +13,10 @@ if not hasattr(sklearn.compose._column_transformer, '_RemainderColsList'):
     sklearn.compose._column_transformer._RemainderColsList = _RemainderColsList
 # ==============================================================================
 
-# 1. Configuração Global da Página (Layout Wide para Dashboards)
+# 1. Configuração Global da Página
 st.set_page_config(page_title="Sistema de Saúde - Obesidade", page_icon="🏥", layout="wide")
 
-# 2. Estilização CSS (Cores do Tema de Saúde: Azul Médico e Branco)
-st.markdown("""
-    <style>
-    /* Fundo da página principal */
-    .stApp {
-        background-color: #F4F9FB;
-    }
-    /* Cor de fundo do Menu Lateral */
-    [data-testid="stSidebar"] {
-        background-color: #E8F1F5;
-    }
-    /* Estilização de Títulos */
-    h1, h2, h3 {
-        color: #2C3E50;
-    }
-    </style>
-    """, unsafe_allow_html=True)
-
-# 3. Carregamento do Modelo (Oculto nos bastidores)
+# 2. Carregamento do Modelo (Oculto nos bastidores)
 @st.cache_resource
 def carregar_modelo():
     modelo = joblib.load('modelo_obesidade_xgb.joblib')
@@ -48,7 +30,7 @@ except Exception as e:
     st.stop()
 
 # ==============================================================================
-# 4. MENU DE NAVEGAÇÃO LATERAL (Sidebar)
+# 3. MENU DE NAVEGAÇÃO LATERAL (Sidebar)
 # ==============================================================================
 st.sidebar.title("🏥 Portal Médico")
 st.sidebar.markdown("Sistema Preditivo de Obesidade")
@@ -61,17 +43,16 @@ opcao_menu = st.sidebar.radio(
 )
 
 # ==============================================================================
-# 5. PÁGINAS DO APLICATIVO (Roteamento)
+# 4. PÁGINAS DO APLICATIVO (Roteamento)
 # ==============================================================================
 
 # ---------------------------------------------------------
-# PÁGINA 1: MODELO DE AVALIAÇÃO (O Formulário original)
+# PÁGINA 1: MODELO DE AVALIAÇÃO (Formulário Clínico)
 # ---------------------------------------------------------
 if opcao_menu == "🩺 Modelo de Avaliação":
     st.title("🩺 Triagem de Pacientes")
     st.markdown("Preencha os dados clínicos e comportamentais do paciente para estimar o risco de obesidade.")
     
-    # Criamos um "Cartão" branco para o formulário ficar destacado do fundo azul claro
     with st.container(border=True):
         col1, col2 = st.columns(2)
 
@@ -129,18 +110,15 @@ elif opcao_menu == "📊 Dashboard Analítico":
     st.title("📊 Painel de Insights Hospitalares")
     st.markdown("Visualize o comportamento demográfico e os hábitos de vida dos pacientes analisados.")
     
-    st.info("Aqui nós vamos colocar os gráficos Plotly que você criou no Colab! (Ex: Histograma de Idade, Correlação, etc.)")
-    
-    # Exemplo de onde ficarão os gráficos em colunas
     col_grafico1, col_grafico2 = st.columns(2)
     with col_grafico1:
         with st.container(border=True):
-            st.subheader("Gráfico 1")
-            st.markdown("*(Espaço para o gráfico de Nível de Obesidade)*")
+            st.subheader("Distribuição de Peso e Altura")
+            st.markdown("*(Espaço reservado para o gráfico)*")
     with col_grafico2:
         with st.container(border=True):
-            st.subheader("Gráfico 2")
-            st.markdown("*(Espaço para o gráfico de Histórico Familiar)*")
+            st.subheader("Matriz de Hábitos Alimentares")
+            st.markdown("*(Espaço reservado para o gráfico)*")
 
 # ---------------------------------------------------------
 # PÁGINA 3: INFORMAÇÕES ADICIONAIS
