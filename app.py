@@ -66,13 +66,13 @@ if opcao_menu == "边缘 Modelo de Avaliação":
             peso = st.number_input("Peso (kg):", min_value=1.0, max_value=300.0, value=70.0, step=0.1)
             historico_familiar = st.selectbox("Histórico Familiar de Sobrepeso?", ["Sim", "Não"])
             alimentos_caloricos = st.selectbox("Consome alimentos calóricos frequentemente (FAVC)?", ["Sim", "Não"])
-            consumo_vegetais = st.slider("Frequência de consumo de vegetais (FCVC):", 1.0, 2.0, 3.0, 4.0 step=0.5)
+            consumo_vegetais = st.slider("Frequência de consumo de vegetais (FCVC):", 1.0, 2.0, 3.0, 4.0, step=0.5)
             refeicoes_principais = st.slider("Número de refeições principais por dia (NCP):", 1.0, 4.0, 3.0, step=1.0)
 
         with col2:
             entre_refeicoes = st.selectbox("Consome alimentos entre as refeições (CAEC)?", ["Nunca", "Às vezes", "Frequentemente", "Sempre"])
             fumante = st.selectbox("O paciente é fumante?", ["Sim", "Não"])
-            consumo_agua = st.slider("Consumo diário de água (Litros) (CH2O):", 1.0, 3.0, 2.0, 5.0 step=0.5)
+            consumo_agua = st.slider("Consumo diário de água (Litros) (CH2O):", 1.0, 3.0, 2.0, 5.0, step=0.5)
             monitora_calorias = st.selectbox("Monitora o consumo de calorias (SCC)?", ["Sim", "Não"])
             atividade_fisica = st.slider("Frequência de atividade física (Dias/Semana) (FAF):", 0.0, 3.0, 1.0, step=0.5)
             uso_tecnologia = st.slider("Tempo de uso de dispositivos tecnológicos (Horas) (TUE):", 0.0, 2.0, 1.0, step=0.5)
