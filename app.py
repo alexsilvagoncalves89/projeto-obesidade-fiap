@@ -52,7 +52,7 @@ opcao_menu = st.sidebar.radio(
 # ---------------------------------------------------------
 # PÁGINA 1: MODELO DE AVALIAÇÃO (Formulário Clínico)
 # ---------------------------------------------------------
-if opcao_menu == "边缘 Modelo de Avaliação":
+if opcao_menu == "Modelo de Avaliação":
     st.title("🩺 Triagem e Diagnóstico Automatizado")
     st.markdown("Insira os parâmetros clínicos e comportamentais do paciente para gerar a predição de risco.")
     
@@ -109,7 +109,7 @@ if opcao_menu == "边缘 Modelo de Avaliação":
 # ---------------------------------------------------------
 # PÁGINA 2: DASHBOARD ANALÍTICO (Gráficos Reais do Plotly)
 # ---------------------------------------------------------
-elif opcao_menu == "📊 Dashboard Analítico":
+elif opcao_menu == "Dashboard Analítico":
     st.title("📊 Painel Epideomológico e de Insights Históricos")
     st.markdown("Análise estatística da base histórica hospitalar utilizada para o desenvolvimento e validação dos modelos preditivos.")
     
@@ -160,7 +160,7 @@ elif opcao_menu == "📊 Dashboard Analítico":
 # ---------------------------------------------------------
 # PÁGINA 3: INFORMAÇÕES ADICIONAIS (Refinada com Padrão FIAP)
 # ---------------------------------------------------------
-elif opcao_menu == "📑 Informações Adicionais":
+elif opcao_menu == "Informações Adicionais":
     st.title("📑 Documentação Técnica e Métricas do Projeto")
     st.markdown("Evidências científicas e arquitetura de Machine Learning estruturadas para auditoria médica e acadêmica.")
     st.divider()
