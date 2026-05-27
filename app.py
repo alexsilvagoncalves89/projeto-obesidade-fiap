@@ -62,8 +62,8 @@ if opcao_menu == "边缘 Modelo de Avaliação":
         with col1:
             genero = st.selectbox("Gênero do Paciente:", ["Feminino", "Masculino"])
             idade = st.number_input("Idade (anos):", min_value=1, max_value=120, value=25)
-            altura = st.number_input("Altura (metros):", min_value=0.50, max_value=2.50, value=1.70, step=0.5)
-            peso = st.number_input("Peso (kg):", min_value=1.0, max_value=300.0, value=50.0, step=1.0)
+            altura = st.number_input("Altura (metros):", min_value=0.50, max_value=2.50, value=1.70, step=0.1)
+            peso = st.number_input("Peso (kg):", min_value=1.0, max_value=300.0, value=50.0, step=10.0)
             historico_familiar = st.selectbox("Histórico Familiar de Sobrepeso?", ["Sim", "Não"])
             alimentos_caloricos = st.selectbox("Consome alimentos calóricos frequentemente (FAVC)?", ["Sim", "Não"])
             consumo_vegetais = st.slider("Frequência de consumo de vegetais (FCVC):", 1.0, 5.0, 2.0, step=1.0)
