@@ -74,7 +74,7 @@ if opcao_menu == "边缘 Modelo de Avaliação":
             fumante = st.selectbox("O paciente é fumante?", ["Não", "Sim"])
             consumo_agua = st.slider("Consumo diário de água (Litros) diaramente (CH2O):", 1.0, 5.0, 2.0, step=0.5)
             monitora_calorias = st.selectbox("Monitora o consumo de calorias diariamente (SCC)?", ["Não", "Sim"])
-            atividade_fisica = st.slider("Frequência de atividade física (Dias/Semana) (FAF):", 0.0, 3.0, 1.0, step=0.5)
+            atividade_fisica = st.slider("Frequência de atividade física (Dias/Semana) (FAF):", 0.0, 7.0, 1.0, step=1.0)
             uso_tecnologia = st.slider("Tempo de uso de dispositivos tecnológicos (Horas) diariamente (TUE):", 1.0, 16.0, 2.0, step=1.0)
             consumo_alcool = st.selectbox("Frequência de consumo de álcool (Dias/Semana) (CALC)?", ["Às vezes", "Frequentemente", "Sempre", "Nunca"])
             meio_transporte = st.selectbox("Principal meio de transporte utilizado (Dias/Semana):", ["Transporte Público", "Automóvel", "Andando", "Motocicleta", "Bicicleta"])
