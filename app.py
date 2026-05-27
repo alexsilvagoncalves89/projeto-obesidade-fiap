@@ -66,7 +66,7 @@ if opcao_menu == "边缘 Modelo de Avaliação":
             peso = st.number_input("Peso (kg):", min_value=1.0, max_value=300.0, value=70.0, step=0.1)
             historico_familiar = st.selectbox("Histórico Familiar de Sobrepeso?", ["Sim", "Não"])
             alimentos_caloricos = st.selectbox("Consome alimentos calóricos frequentemente (FAVC)?", ["Sim", "Não"])
-            consumo_vegetais = st.slider("Frequência de consumo de vegetais (FCVC):", 1.0, 2.0, 3.0, 4.0, step=0.5)
+            consumo_vegetais = st.slider("Frequência de consumo de vegetais (FCVC):", 1.0, 3.0, 2.0, 5.0, step=0.5)
             refeicoes_principais = st.slider("Número de refeições principais por dia (NCP):", 1.0, 4.0, 3.0, step=1.0)
 
         with col2:
