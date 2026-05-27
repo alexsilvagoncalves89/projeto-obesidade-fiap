@@ -42,7 +42,7 @@ st.sidebar.divider()
 
 opcao_menu = st.sidebar.radio(
     "Navegação:",
-    ["边缘 Modelo de Avaliação", "📊 Dashboard Analítico", "📑 Informações Adicionais"]
+    ["Modelo de Avaliação", "📊 Dashboard Analítico", "📑 Informações Adicionais"]
 )
 
 # ==============================================================================
