@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import joblib
-import plotly.express as px
 
 # ==============================================================================
 # INJEÇÃO DE COMPATIBILIDADE (Correção do Erro _RemainderColsList)
@@ -107,55 +106,33 @@ if opcao_menu == "Modelo de Avaliação":
             st.markdown("✅ **Diretriz Hospitalar:** Paciente dentro dos parâmetros ideais de normalidade ou peso adequado.")
 
 # ---------------------------------------------------------
-# PÁGINA 2: DASHBOARD ANALÍTICO (Gráficos Reais do Plotly)
+# PÁGINA 2: DASHBOARD ANALÍTICO (Redirecionamento Power BI)
 # ---------------------------------------------------------
 elif opcao_menu == "Dashboard Analítico":
-    st.title("📊 Painel Epideomológico e de Insights Históricos")
-    st.markdown("Análise estatística da base histórica hospitalar utilizada para o desenvolvimento e validação dos modelos preditivos.")
+    st.title("📊 Painel Epidemiológico e de Insights Históricos")
     
-    @st.cache_data
-    def carregar_dados():
-        return pd.read_csv('Obesity.csv')
-        
-    try:
-        df = carregar_dados()
-        
-        with st.container(border=True):
-            st.subheader("Volume de Pacientes por Categoria de Peso (Visão Geral OMS)")
-            fig_niveis = px.histogram(
-                df, y="NObeyesdad", color="NObeyesdad",
-                labels={"NObeyesdad": "Classificação Clínica"},
-                color_discrete_sequence=px.colors.qualitative.Pastel
-            )
-            fig_niveis.update_layout(showlegend=False, margin=dict(l=20, r=20, t=20, b=20))
-            st.plotly_chart(fig_niveis, use_container_width=True)
-        
-        st.markdown("<br>", unsafe_allow_html=True)
-        
-        col_esq, col_dir = st.columns(2)
-        with col_esq:
-            with st.container(border=True):
-                st.subheader("Frequência de Atividade Física vs Faixa Etária")
-                fig_box = px.box(
-                    df, x="FAF", y="Age", color="FAF",
-                    labels={"FAF": "Dias de Atividade Física/Semana", "Age": "Idade (Anos)"},
-                    color_discrete_sequence=px.colors.sequential.Blues
-                )
-                fig_box.update_layout(showlegend=False)
-                st.plotly_chart(fig_box, use_container_width=True)
-                
-        with col_dir:
-            with st.container(border=True):
-                st.subheader("Prevalência de Categorias Clínicas por Gênero")
-                fig_gen = px.histogram(
-                    df, x="NObeyesdad", color="Gender", barmode="group",
-                    labels={"NObeyesdad": "Categoria", "Gender": "Gênero"},
-                    color_discrete_sequence=["#FF9999", "#3399CC"]
-                )
-                st.plotly_chart(fig_gen, use_container_width=True)
-                
-    except FileNotFoundError:
-        st.warning("⚠️ Base de dados 'Obesity.csv' não encontrada na raiz para renderizar os gráficos históricos.")
+    st.markdown("""
+    A análise exploratória avançada e o acompanhamento de métricas históricas de pacientes foram desenvolvidos no **Microsoft Power BI** para proporcionar uma experiência interativa, fluida e aprofundada.
+    
+    Neste painel corporativo, você encontrará:
+    * Distribuição demográfica de risco.
+    * Análise de correlação de hábitos alimentares.
+    * Segmentação detalhada dos níveis de obesidade da OMS.
+    """)
+    
+    st.markdown("<br>", unsafe_allow_html=True)
+    
+    # --- IMPORTANTE: Substitua a URL abaixo pelo seu link real do Power BI ---
+    st.link_button(
+        "📈 Acessar Dashboard Completo no Power BI", 
+        "www.uol.com.br", 
+        type="primary", 
+        use_container_width=True
+    )
+    
+    st.markdown("<br>", unsafe_allow_html=True)
+    with st.container(border=True):
+        st.info("💡 **Aviso:** O painel será aberto de forma segura em uma nova aba do seu navegador.")
 
 # ---------------------------------------------------------
 # PÁGINA 3: INFORMAÇÕES ADICIONAIS (Refinada com Padrão FIAP)
