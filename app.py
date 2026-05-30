@@ -45,11 +45,11 @@ opcao_menu = st.sidebar.radio(
 )
 
 # ==============================================================================
-# 4. PÁGINAS DO APLICATIVO (Roteamento)
+# 4. PÁGINAS DO APLICATIVO
 # ==============================================================================
 
 # ---------------------------------------------------------
-# PÁGINA 1: MODELO DE AVALIAÇÃO (Formulário Clínico)
+# PÁGINA 1: MODELO DE AVALIAÇÃO
 # ---------------------------------------------------------
 if opcao_menu == "Modelo de Avaliação":
     st.title("🩺 Triagem e Diagnóstico Automatizado")
@@ -106,10 +106,10 @@ if opcao_menu == "Modelo de Avaliação":
             st.markdown("✅ **Diretriz Hospitalar:** Paciente dentro dos parâmetros ideais de normalidade ou peso adequado.")
 
 # ---------------------------------------------------------
-# PÁGINA 2: DASHBOARD ANALÍTICO (Redirecionamento Power BI)
+# PÁGINA 2: DASHBOARD ANALÍTICO
 # ---------------------------------------------------------
 elif opcao_menu == "Dashboard Analítico":
-    st.title("📊 Painel Epidemiológico e de Insights Históricos")
+    st.title("📊 COLOCAR O TÍTULO")
     
     st.markdown("""
     A análise exploratória avançada e o acompanhamento de métricas históricas de pacientes foram desenvolvidos no **Microsoft Power BI** para proporcionar uma experiência interativa, fluida e aprofundada.
@@ -125,7 +125,7 @@ elif opcao_menu == "Dashboard Analítico":
     # --- IMPORTANTE: Substitua a URL abaixo pelo seu link real do Power BI ---
     st.link_button(
         "📈 Acessar Dashboard Completo no Power BI", 
-        "www.uol.com.br", 
+        "https://www.uol.com.br", 
         type="primary", 
         use_container_width=True
     )
@@ -135,7 +135,7 @@ elif opcao_menu == "Dashboard Analítico":
         st.info("💡 **Aviso:** O painel será aberto de forma segura em uma nova aba do seu navegador.")
 
 # ---------------------------------------------------------
-# PÁGINA 3: INFORMAÇÕES ADICIONAIS (Refinada com Padrão FIAP)
+# PÁGINA 3: INFORMAÇÕES ADICIONAIS
 # ---------------------------------------------------------
 elif opcao_menu == "Informações Adicionais":
     st.title("📑 Documentação Técnica e Métricas do Projeto")
