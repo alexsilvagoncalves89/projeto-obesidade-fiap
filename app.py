@@ -125,7 +125,7 @@ elif opcao_menu == "Dashboard Analítico":
     # --- IMPORTANTE: Substitua a URL abaixo pelo seu link real do Power BI ---
     st.link_button(
         "📈 Acessar Dashboard Completo no Power BI", 
-        "https://www.uol.com.br", 
+        "https://app.powerbi.com/view?r=eyJrIjoiZTY5MTZmYjYtNDIyNC00MDk2LTgwMjYtYzgyMDhmMmYyNDA0IiwidCI6IjExZGJiZmUyLTg5YjgtNDU0OS1iZTEwLWNlYzM2NGU1OTU1MSIsImMiOjR9", 
         type="primary", 
         use_container_width=True
     )
