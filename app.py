@@ -71,10 +71,10 @@ if opcao_menu == "Modelo de Avaliação":
         with col2:
             entre_refeicoes = st.selectbox("Consome alimentos entre as refeições diaramente?", ["Às vezes", "Frequentemente", "Sempre", "Nunca"])
             fumante = st.selectbox("O paciente é fumante?", ["Não", "Sim"])
-            consumo_agua = st.slider("Consumo diário de água (Litros) diaramente - Escala: (1) < 1, (2) 1–2, (3) > 2:", 1.0, 3.0, 2.0, step=0.5)
+            consumo_agua = st.slider("Consumo diário de água (Litros) diaramente - Escala: (1) < 1x/dia, (2) 1–2x/dia, (3) > 2x/dia:", 1.0, 3.0, 2.0, step=0.5)
             monitora_calorias = st.selectbox("Monitora o consumo de calorias diariamente ?", ["Não", "Sim"])
             atividade_fisica = st.slider("Frequência de atividade física (Dias/Semana) - Escala: (0) nenhuma, (1) 1–2×/sem, (2) 3–4×/sem, (3) 5×/sem ou mais:", 0.0, 3.0, 1.0, step=1.0)
-            uso_tecnologia = st.slider("Tempo de uso de dispositivos tecnológicos (Horas) diariamente - Escala: (0) 0–2, (1) 3–5, (2) > 5:", 1.0, 2.0, 2.0, step=1.0)
+            uso_tecnologia = st.slider("Tempo de uso de dispositivos tecnológicos (Horas) diariamente - Escala: (0) 0–2x/dia, (1) 3–5x/dia, (2) > 5x/dia:", 1.0, 2.0, 2.0, step=1.0)
             consumo_alcool = st.selectbox("Frequência de consumo de álcool (Dias/Semana)?", ["Às vezes", "Frequentemente", "Sempre", "Nunca"])
             meio_transporte = st.selectbox("Principal meio de transporte utilizado (Dias/Semana):", ["Transporte Público", "Automóvel", "Andando", "Motocicleta", "Bicicleta"])
 
