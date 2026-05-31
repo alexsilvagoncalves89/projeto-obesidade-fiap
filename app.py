@@ -112,7 +112,7 @@ elif opcao_menu == "Dashboard Analítico":
     st.title("📊 Análise de fatores de risco de Obesidade")
     
     st.markdown("""
-    A análise exploratória avançada e o acompanhamento de métricas históricas de pacientes foram desenvolvidos no **Microsoft Power BI** para proporcionar uma experiência interativa, fluida e aprofundada.
+    A análise exploratória e o acompanhamento das métricas históricas dos pacientes foram consolidados no **Microsoft Power BI**. Esta integração foi desenhada para oferecer à equipe médica uma experiência analítica, interativa e aprofundada, permitindo o isolamento de variáveis e a descoberta de padrões de comportamento.
     
     Neste painel corporativo, você encontrará:
     * Total de representantes.
