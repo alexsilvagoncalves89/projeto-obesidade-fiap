@@ -115,7 +115,7 @@ elif opcao_menu == "Dashboard Analítico":
     A análise exploratória e o acompanhamento das métricas históricas dos pacientes foram consolidados no **Microsoft Power BI**. Esta integração foi desenhada para oferecer à equipe médica uma experiência analítica, interativa e aprofundada, permitindo o isolamento de variáveis e a descoberta de padrões de comportamento.
     
     Neste painel corporativo, você encontrará:
-    * Total de representantes.
+    * Total de respondentes.
     * Categoria de Peso
     * Faixa de peso
     * Faixa de altura
