@@ -36,7 +36,7 @@ except Exception as e:
 # 3. MENU DE NAVEGAÇÃO LATERAL (Sidebar)
 # ==============================================================================
 st.sidebar.title("🏥 Portal Médico")
-st.sidebar.markdown("Sistema de Suporte à Decisão Clínica")
+st.sidebar.markdown("Predição de Obesidade com Inteligência Artificial")
 st.sidebar.divider()
 
 opcao_menu = st.sidebar.radio(
