@@ -116,7 +116,7 @@ elif opcao_menu == "Dashboard Analítico":
     
     Neste painel corporativo, você encontrará:
     * Total de representantes.
-    * Nível de obesidade
+    * Categoria de Peso
     * Faixa de peso
     * Faixa de altura
     * Faixa de etária
