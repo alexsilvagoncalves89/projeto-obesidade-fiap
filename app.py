@@ -65,16 +65,16 @@ if opcao_menu == "Modelo de Avaliação":
             peso = st.number_input("Peso (kg):", min_value=1.0, max_value=300.0, value=50.0, step=10.0)
             historico_familiar = st.selectbox("Histórico Familiar de Sobrepeso?", ["Não", "Sim"])
             alimentos_caloricos = st.selectbox("Consome alimentos calóricos diariamente (FAVC)?", ["Sim", "Não"])
-            consumo_vegetais = st.slider("Frequência de consumo de vegetais diariamente (FCVC):", 1.0, 5.0, 2.0, step=1.0)
-            refeicoes_principais = st.slider("Número de refeições principais diariamente (NCP):", 1.0, 6.0, 3.0, step=1.0)
+            consumo_vegetais = st.slider("Frequência de consumo de vegetais diariamente (FCVC) - (escala 1–3): 1 raramente, 2 às vezes, 3 sempre:", 1.0, 3.0, 2.0, step=1.0)
+            refeicoes_principais = st.slider("Número de refeições principais diariamente (NCP) - (escala 1–4): 1 uma refeição, 2 duas, 3 três, 4 quatro ou mais:", 1.0, 4.0, 3.0, step=1.0)
 
         with col2:
             entre_refeicoes = st.selectbox("Consome alimentos entre as refeições diaramente (CAEC)?", ["Às vezes", "Frequentemente", "Sempre", "Nunca"])
             fumante = st.selectbox("O paciente é fumante?", ["Não", "Sim"])
-            consumo_agua = st.slider("Consumo diário de água (Litros) diaramente (CH2O):", 1.0, 5.0, 2.0, step=0.5)
+            consumo_agua = st.slider("Consumo diário de água (Litros) diaramente (CH2O) - (escala 1–3): 1 < 1 L/dia, 2 1–2 L/dia, 3 > 2 L/dia:", 1.0, 3.0, 2.0, step=0.5)
             monitora_calorias = st.selectbox("Monitora o consumo de calorias diariamente (SCC)?", ["Não", "Sim"])
-            atividade_fisica = st.slider("Frequência de atividade física (Dias/Semana) (FAF):", 0.0, 7.0, 1.0, step=1.0)
-            uso_tecnologia = st.slider("Tempo de uso de dispositivos tecnológicos (Horas) diariamente (TUE) 0 = até 2 hrs | 1 entre 3 à 5 hrs e 2 +5 hrs:", 1.0, 2.0, 2.0, step=1.0)
+            atividade_fisica = st.slider("Frequência de atividade física (Dias/Semana) (FAF) - (escala 0–3): 0 nenhuma, 1 ~1–2×/sem, 2 ~3–4×/sem, 3 5×/sem ou mais:", 0.0, 3.0, 1.0, step=1.0)
+            uso_tecnologia = st.slider("Tempo de uso de dispositivos tecnológicos (Horas) diariamente (TUE) - (escala 0–2): 0 ~0–2 h/dia, 1 ~3–5 h/dia, 2 > 5 h/dia.:", 1.0, 2.0, 2.0, step=1.0)
             consumo_alcool = st.selectbox("Frequência de consumo de álcool (Dias/Semana) (CALC)?", ["Às vezes", "Frequentemente", "Sempre", "Nunca"])
             meio_transporte = st.selectbox("Principal meio de transporte utilizado (Dias/Semana):", ["Transporte Público", "Automóvel", "Andando", "Motocicleta", "Bicicleta"])
 
