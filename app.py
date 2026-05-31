@@ -109,15 +109,18 @@ if opcao_menu == "Modelo de Avaliação":
 # PÁGINA 2: DASHBOARD ANALÍTICO
 # ---------------------------------------------------------
 elif opcao_menu == "Dashboard Analítico":
-    st.title("📊 COLOCAR O TÍTULO")
+    st.title("📊 Análise de fatores de risco de Obesidade")
     
     st.markdown("""
     A análise exploratória avançada e o acompanhamento de métricas históricas de pacientes foram desenvolvidos no **Microsoft Power BI** para proporcionar uma experiência interativa, fluida e aprofundada.
     
     Neste painel corporativo, você encontrará:
-    * Distribuição demográfica de risco.
-    * Análise de correlação de hábitos alimentares.
-    * Segmentação detalhada dos níveis de obesidade da OMS.
+    * Total de representantes.
+    * Nível de obesidade
+    * Faixa de peso
+    * Faixa de altura
+    * Faixa de etária
+    * Por geração
     """)
     
     st.markdown("<br>", unsafe_allow_html=True)
